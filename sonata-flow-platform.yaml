@@ -43,6 +43,13 @@ spec:
       podTemplate:
         container:
           image: "quay.io/kiegroup/kogito-jobs-service-postgresql-nightly:latest" # To be removed when stable version is released
+          resources:
+            limits:
+              cpu: 500m
+              memory: 1Gi
+            requests:
+              cpu: 100m
+              memory: 512Mi
       persistence:
         postgresql:
           secretRef:
